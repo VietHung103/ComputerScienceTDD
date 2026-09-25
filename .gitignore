@@ -8,8 +8,7 @@ wheels/
 
 # Virtual environments
 .venv
-src
 __marimo__
-.python-version
-uv.lock
-pyproject.toml
+.pytest_cache
+notebooks
+tests
