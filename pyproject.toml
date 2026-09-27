@@ -32,3 +32,5 @@ dev = [
 pythonpath = ["src"]
 testpaths = ["tests"]
 
+[tool.ruff]
+extend-exclude = ["notebooks"]
