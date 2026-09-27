@@ -10,5 +10,3 @@ wheels/
 .venv
 __marimo__
 .pytest_cache
-notebooks
-tests
