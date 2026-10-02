@@ -1,5 +1,8 @@
 import argparse
+
 from fizzbuzz_tdd_kata.core import fizzbuzz
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="fizzbuzz-tdd-katqa",
