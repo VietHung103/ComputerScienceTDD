@@ -1,5 +1,5 @@
 [project]
-name = "fizzbuzz-tdd-kata"
+name = "fizzbuzz-tdd-kata-viethung103"
 version = "0.1.0"
 description = "A TDD kata: Fizzbuzz, from notebook exploration to a tested, pubilsh package"
 readme = "README.md"
@@ -11,13 +11,13 @@ authors = [{name = "Viet Hung", email = "viethungpc103@gmail.com"}]
 dependencies = []
 
 [project.scripts]
-fizzbuzz-tdd-kata = "fizzbuzz_tdd_kata:main"
+fizzbuzz-tdd-kata = "fizzbuzz_tdd_kata.cli:main"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.hatch.build.target.wheel]
+[tool.hatch.build.targets.wheel]
 packages = ["src/fizzbuzz_tdd_kata"]
 
 [dependency-groups]
@@ -25,7 +25,9 @@ dev = [
     "marimo>=0.24.2",
     "pytest>=9.1.1",
     "ruff>=0.16.8",
-    "pytest-cov>=5.0", 
+    "pytest-cov>=5.0",
+    "mypy>=2.3.1",
+    "matplotlib>=3.11.2",
 ]
 
 [tool.pytest.ini_options]
@@ -33,4 +35,23 @@ pythonpath = ["src"]
 testpaths = ["tests"]
 
 [tool.ruff]
+line-length = 100
+target-version = "py311"
 extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]   # pyflakes, pycodestyle, isort, pyupgrade, bugbear
+
+[tool.mypy]
+strict = true
+files = ["src"]
+
+[tool.coverage.run]
+source = ["src"]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 90
+
+
+
